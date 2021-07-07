@@ -6,9 +6,12 @@ func main() {
 	result := add(100, 300)
 	fmt.Println(result)
 	//fmt.Println(divide(100, 7))
-	quotient, remainder := divide(100, 7)
+	/*
+		quotient, remainder := divide(100, 7)
+		fmt.Println(quotient, remainder)
+	*/
+	quotient, _ := divide(100, 7)
 	fmt.Println(quotient)
-	fmt.Println(remainder)
 }
 
 /*
