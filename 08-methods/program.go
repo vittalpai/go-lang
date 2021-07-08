@@ -88,10 +88,6 @@ func main() {
 	fmt.Println("Includes Pencil ? => ", products.Includes(pencil))
 	fmt.Println("Includes dummyProduct ? => ", products.Includes(dummyProduct))
 
-	/*
-		fmt.Println("Any costly products ? => ", AnyCostlyProduct(&products))
-		fmt.Println("Any stationary products ? => ", AnyStationaryProduct(&products))
-	*/
 	areThereCostlyProducts := products.Any(func(p Product) bool {
 		return p.Cost > 50
 	})
