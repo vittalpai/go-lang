@@ -13,7 +13,7 @@ func (c Circle) Area() float32 {
 	return math.Pi * c.Radius * c.Radius
 }
 
-func (c Circle) Permeter() float32 {
+func (c Circle) Perimeter() float32 {
 	return 2 * math.Pi * c.Radius
 }
 
@@ -26,7 +26,7 @@ func (r Rectangle) Area() float32 {
 	return r.Height * r.Width
 }
 
-func (r Rectangle) Permeter() float32 {
+func (r Rectangle) Perimeter() float32 {
 	return (2 * r.Height) + (2 * r.Width)
 }
 
@@ -40,21 +40,39 @@ func PrintArea(sa ShapeWithArea) {
 }
 
 type ShapeWithPermeter interface {
-	Permeter() float32
+	Perimeter() float32
 }
 
-func PrintPermeter(sp ShapeWithPermeter) {
-	fmt.Println("Permeter = ", sp.Permeter())
+func PrintPerimeter(sp ShapeWithPermeter) {
+	fmt.Println("Permeter = ", sp.Perimeter())
+}
+
+//interface composition
+
+type Dimension interface {
+	ShapeWithArea
+	ShapeWithPermeter
+}
+
+func printDimensions(d Dimension) {
+	PrintArea(d)
+	PrintPerimeter(d)
 }
 
 func main() {
 	c := Circle{10}
 	//fmt.Println("Area = ", c.Area())
-	PrintArea(c)
-	PrintPermeter(c)
+	/*
+		PrintArea(c)
+		PrintPerimeter(c)
+	*/
+	printDimensions(c)
 
 	r := Rectangle{10, 12}
 	//fmt.Println("Area =", r.Area())
-	PrintArea(r)
-	PrintPermeter(r)
+	/*
+		PrintArea(r)
+		PrintPerimeter(r)
+	*/
+	printDimensions(r)
 }
