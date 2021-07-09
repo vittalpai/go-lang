@@ -67,8 +67,8 @@ type ByName struct {
 	Products
 }
 
-func (products ByName) Less(i, j int) bool {
-	return products.Products[i].Name < products.Products[j].Name
+func (list ByName) Less(i, j int) bool {
+	return list.Products[i].Name < list.Products[j].Name
 }
 
 /* Products Methods */
