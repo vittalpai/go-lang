@@ -11,7 +11,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	err2 := ioutil.WriteFile("data4-copy.txt", []byte("fileContents"), 0x777)
+	err2 := ioutil.WriteFile("data4-copy.txt", fileContents, 0x777)
 	if err2 != nil {
 		log.Fatalln(err2)
 	}

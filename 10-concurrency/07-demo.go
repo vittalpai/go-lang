@@ -7,6 +7,8 @@ import (
 func main() {
 	data := []int{2, 1, 2321, 123, 12, 321, 321, 2, 321, 4, 2, 12, 232}
 	firstSet := data[:len(data)/2]
+	secondSet := data[:len(data)/2]
+	sun.
 }
 
 func sum(resultCh, ch2 chan int) {
